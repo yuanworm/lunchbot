@@ -1,0 +1,1 @@
+worker: Rscript lunchbot.R

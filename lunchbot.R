@@ -1,11 +1,7 @@
 #####Lunch Launcher to Help us Launch Lunch#######
 library(tidyverse)
 library(dplyr)
-#install.packages("telegram.bot")
 library(telegram.bot)
-
-file.edit(path.expand(file.path("~", ".Renviron")))
-
 
 lunch_bot <- function(){
   lunch_list = c( "KFC", "McDonald's","Porridge","Chicken Rice","Prata","Chicken Rice", 

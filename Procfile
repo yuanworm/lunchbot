@@ -1,1 +1,1 @@
-worker: Rscript lunchbot.R
+worker: Rscript init.R && Rscript lunchbot.R

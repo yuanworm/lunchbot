@@ -8,6 +8,17 @@ bot <- Bot(token = bot_token)
 # Initialize the last processed update_id
 last_update_id <- 0
 
+#randomize a lunch option
+lunch_bot <- function(){
+  lunch_list = c( "KFC", "McDonald's","Porridge","Chicken Rice","Prata","Chicken Rice", 
+                  "Stuffd", "Guzman y Gomez",
+                 "Wanton Mee", "CRAVE Nasi Lemak", "Ya Kun",
+                 "Sushi", "Mos Burger", "Cook at Home", "Duck Rice", 
+                 "Saizeriya","The Larder","Subway", "Oyster Omelette", "Pokebowl" )
+  x <- sample.int(length(lunch_list), 1)
+  lunch_list[x]
+}
+
 # Start polling
 while (TRUE) {
   # Get updates from Telegram, starting from the last processed update_id + 1
@@ -21,7 +32,7 @@ while (TRUE) {
     
     # Check if the message is "/start" and hasn't been processed yet
     if (text == "/start" && update_id > last_update_id) {
-      bot$sendMessage(chat_id, text = "Hello! I'm your Telegram bot. How can I help you?")
+      bot$sendMessage(chat_id, text = lunch_bot())
       
       # Update the last processed update_id
       last_update_id <- update_id

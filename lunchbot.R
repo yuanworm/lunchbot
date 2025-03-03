@@ -1,6 +1,4 @@
 #####Lunch Launcher to Help us Launch Lunch#######
-library(tidyverse)
-library(dplyr)
 library(telegram.bot)
 
 bot_token <- Sys.getenv("TELEGRAM_BOT_TOKEN")
